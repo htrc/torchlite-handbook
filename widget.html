@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -179,6 +213,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">4.1</span> Overview</a></li>
   <li><a href="#exploring-textual-data-with-the-torchlite-summary-widget" id="toc-exploring-textual-data-with-the-torchlite-summary-widget" class="nav-link" data-scroll-target="#exploring-textual-data-with-the-torchlite-summary-widget"><span class="header-section-number">4.2</span> Exploring Textual Data with the Torchlite Summary Widget</a></li>
+  <li><a href="#different-visualizations" id="toc-different-visualizations" class="nav-link" data-scroll-target="#different-visualizations"><span class="header-section-number">4.3</span> Different Visualizations</a>
+  <ul class="collapse">
+  <li><a href="#word-cloud" id="toc-word-cloud" class="nav-link" data-scroll-target="#word-cloud"><span class="header-section-number">4.3.1</span> Word Cloud</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">4.3.2</span> Pie Chart</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/widget.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -217,6 +256,172 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://github.com/htrc/torchlite-summary">Code Base of Torch lite Summary</a></p>
 <p><a href="https://github.com/aarthishivkumar/HathiTrust-API/blob/main/htrcpractice1.ipynb">HathiTrust-API</a></p>
 </blockquote>
+</section>
+<section id="different-visualizations" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="different-visualizations"><span class="header-section-number">4.3</span> Different Visualizations</h2>
+<p>In this section, we will summarize some of the sample visualizations in different programming languages that can be made using TORCHLITE API.</p>
+<section id="word-cloud" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="word-cloud"><span class="header-section-number">4.3.1</span> Word Cloud</h3>
+<p>A <strong>word cloud</strong> is a visualization technique for displaying text data in which the importance of each word is shown through its size. Typically, the more frequently a word appears in the text, the larger it appears in the word cloud. It’s useful for quickly identifying the most prominent terms in a dataset or text corpus.</p>
+<p>The Word Cloud widget is being displayed using React and D3 libraries. Here’s a high-level overview of how it works:</p>
+<section id="internal-working-of-word-cloud" class="level4" data-number="4.3.1.1">
+<h4 data-number="4.3.1.1" class="anchored" data-anchor-id="internal-working-of-word-cloud"><span class="header-section-number">4.3.1.1</span> Internal working of Word Cloud:</h4>
+<ul>
+<li><p><strong>Data Fetching</strong>: The component fetches data from an external API endpoint (https://tools.htrc.illinois.edu/ef-api/worksets/${worksetId}/volumes) using fetch API. This API returns volumes of text data along with their token counts.</p></li>
+<li><p><strong>Data Processing</strong>: Once the data is fetched, it is processed to extract the token counts for each word. Common words and punctuation marks are filtered out, and the frequency of each remaining word is calculated across all volumes.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> volume <span class="kw">of</span> data<span class="op">.</span><span class="at">data</span>) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> individualVol <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        loacalPerVolDict[volume<span class="op">.</span><span class="at">htid</span>] <span class="op">=</span> {}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">const</span> page <span class="kw">of</span> volume<span class="op">.</span><span class="at">features</span><span class="op">.</span><span class="at">pages</span>) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> body <span class="op">=</span> page<span class="op">.</span><span class="at">body</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (body<span class="op">.</span><span class="at">tokensCount</span> <span class="op">!==</span> <span class="kw">null</span>) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>              <span class="fu">updateDict</span>(body<span class="op">.</span><span class="at">tokensCount</span><span class="op">,</span>loacalPerVolDict[volume<span class="op">.</span><span class="at">htid</span>])<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>          total <span class="op">+=</span> page<span class="op">.</span><span class="at">tokensCount</span><span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>          individualVol <span class="op">+=</span> page<span class="op">.</span><span class="at">tokensCount</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><strong>Word Cloud Generation</strong>: The most frequent words are selected, and their frequencies are used to determine the size of each word in the word cloud. D3’s Word Cloud component (react-d3-cloud) is used to generate the Word Cloud visualization. This component takes in data in the form of an array of word objects, where each object contains the text of the word and its frequency.</p></li>
+<li><p><strong>Rendering</strong>: The Word Cloud component is rendered within the React component, with additional styling and customization options such as font size, rotation, and padding.</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>WordCloud</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      width<span class="op">=</span>{<span class="dv">1000</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      height<span class="op">=</span>{<span class="dv">3000</span>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      data<span class="op">=</span>{data}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      fontSize<span class="op">=</span>{fontSize}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      rotate<span class="op">=</span>{rotate}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      padding<span class="op">=</span>{<span class="dv">6</span>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      spiral<span class="op">=</span><span class="st">"rectangular"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      random<span class="op">=</span>{<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>}      </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">/&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Stopwords<span class="op">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>          <span class="st">'a'</span><span class="op">,</span> <span class="st">'an'</span><span class="op">,</span> <span class="st">'the'</span><span class="op">,</span> <span class="st">'and'</span><span class="op">,</span> <span class="st">'but'</span><span class="op">,</span> <span class="st">'or'</span><span class="op">,</span> <span class="st">'for'</span><span class="op">,</span> <span class="st">'nor'</span><span class="op">,</span> <span class="st">'not'</span><span class="op">,</span> <span class="st">'in'</span><span class="op">,</span> <span class="st">'on'</span><span class="op">,</span> <span class="st">'at'</span><span class="op">,</span> <span class="st">'to'</span><span class="op">,</span> <span class="st">'of'</span><span class="op">,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>          <span class="st">'by'</span><span class="op">,</span> <span class="st">'with'</span><span class="op">,</span> <span class="st">'about'</span><span class="op">,</span> <span class="st">'above'</span><span class="op">,</span>  <span class="st">'below'</span><span class="op">,</span> <span class="st">'over'</span><span class="op">,</span> <span class="st">'under'</span><span class="op">,</span> <span class="st">'above'</span><span class="op">,</span> <span class="st">'below'</span><span class="op">,</span> <span class="st">'from'</span><span class="op">,</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>          <span class="st">'as'</span><span class="op">,</span> <span class="st">'I'</span><span class="op">,</span> <span class="st">'you'</span><span class="op">,</span> <span class="st">'he'</span><span class="op">,</span> <span class="st">'she'</span><span class="op">,</span> <span class="st">'it'</span><span class="op">,</span> <span class="st">'we'</span><span class="op">,</span> <span class="st">'they'</span><span class="op">,</span> <span class="st">'me'</span><span class="op">,</span> <span class="st">'him'</span><span class="op">,</span> <span class="st">'her'</span><span class="op">,</span> <span class="st">'us'</span><span class="op">,</span> <span class="st">'them'</span><span class="op">,</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>          <span class="st">'my'</span><span class="op">,</span> <span class="st">'your'</span><span class="op">,</span> <span class="st">'his'</span><span class="op">,</span> <span class="st">'its'</span><span class="op">,</span> <span class="st">'our'</span><span class="op">,</span> <span class="st">'their'</span><span class="op">,</span> <span class="st">'mine'</span><span class="op">,</span> <span class="st">'yours'</span><span class="op">,</span> <span class="st">'hers'</span><span class="op">,</span> <span class="st">'ours'</span><span class="op">,</span> <span class="st">'theirs'</span><span class="op">,</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>          <span class="st">'this'</span><span class="op">,</span> <span class="st">'that'</span><span class="op">,</span> <span class="st">'these'</span><span class="op">,</span> <span class="st">'those'</span><span class="op">,</span> <span class="st">'is'</span><span class="op">,</span> <span class="st">'am'</span><span class="op">,</span> <span class="st">'are'</span><span class="op">,</span> <span class="st">'was'</span><span class="op">,</span> <span class="st">'were'</span><span class="op">,</span> <span class="st">'be'</span><span class="op">,</span> <span class="st">'being'</span><span class="op">,</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>          <span class="st">'been'</span><span class="op">,</span> <span class="st">'have'</span><span class="op">,</span> <span class="st">'has'</span><span class="op">,</span> <span class="st">'had'</span><span class="op">,</span> <span class="st">'do'</span><span class="op">,</span> <span class="st">'does'</span><span class="op">,</span> <span class="st">'did'</span><span class="op">,</span> <span class="st">'will'</span><span class="op">,</span> <span class="st">'shall'</span><span class="op">,</span> <span class="st">'should'</span><span class="op">,</span> <span class="st">'would'</span><span class="op">,</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>          <span class="st">'can'</span><span class="op">,</span> <span class="st">'could'</span><span class="op">,</span> <span class="st">'may'</span><span class="op">,</span> <span class="st">'might'</span><span class="op">,</span> <span class="st">'must'</span><span class="op">,</span> <span class="st">'shall'</span><span class="op">,</span> <span class="st">'should'</span><span class="op">,</span> <span class="st">'would'</span><span class="op">,</span> <span class="st">'cannot'</span><span class="op">,</span> <span class="st">'could not'</span><span class="op">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>          <span class="st">'can</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'couldn</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'don</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'didn</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'won</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'wouldn</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'shouldn</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span> <span class="st">'mustn</span><span class="sc">\'</span><span class="st">t'</span><span class="op">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>          <span class="st">'let</span><span class="sc">\'</span><span class="st">s'</span><span class="op">,</span> <span class="st">'etc.'</span><span class="op">,</span> <span class="st">'-rrb-'</span><span class="op">,</span> <span class="st">'-lrb-'</span><span class="op">,</span> <span class="st">'--'</span><span class="op">,</span> <span class="st">'-'</span><span class="op">,</span> <span class="st">'a'</span><span class="op">,</span><span class="st">'b'</span><span class="op">,</span><span class="st">'c'</span><span class="op">,</span><span class="st">'d'</span><span class="op">,</span><span class="st">'e'</span><span class="op">,</span><span class="st">'f'</span><span class="op">,</span><span class="st">'g'</span><span class="op">,</span><span class="st">'h'</span><span class="op">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>          <span class="st">'i'</span><span class="op">,</span><span class="st">'j'</span><span class="op">,</span><span class="st">'k'</span><span class="op">,</span><span class="st">'l'</span><span class="op">,</span><span class="st">'m'</span><span class="op">,</span><span class="st">'n'</span><span class="op">,</span><span class="st">'o'</span><span class="op">,</span><span class="st">'p'</span><span class="op">,</span><span class="st">'q'</span><span class="op">,</span><span class="st">'r'</span><span class="op">,</span><span class="st">'s'</span><span class="op">,</span><span class="st">'t'</span><span class="op">,</span><span class="st">'u'</span><span class="op">,</span><span class="st">'v'</span><span class="op">,</span><span class="st">'w'</span><span class="op">,</span><span class="st">'x'</span><span class="op">,</span><span class="st">'y'</span><span class="op">,</span><span class="st">'z'</span><span class="op">,</span><span class="st">"''"</span><span class="op">,</span><span class="st">"``"</span><span class="op">,</span><span class="st">"'s"</span><span class="op">,</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>          <span class="st">"..."</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      ]<span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>punctuationMarks <span class="op">=</span> [<span class="st">"."</span><span class="op">,</span> <span class="st">","</span><span class="op">,</span> <span class="st">"!"</span><span class="op">,</span> <span class="st">"?"</span><span class="op">,</span><span class="st">";"</span><span class="op">,</span><span class="st">":"</span><span class="op">,</span><span class="st">"'"</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Creating a word cloud often involves filtering out common words, also known as stopwords, to emphasize the more unique or relevant words within a text.</p>
+<p><strong>Interactivity</strong>: The component provides interactivity features such as downloading the word cloud as an image (PNG or SVG) or as CSV data.</p>
+<p><strong>Summary:</strong> All in all, the Word Cloud widget provides a visually appealing and informative way to explore the most common words in a dataset or text corpus, facilitating quick insights into the underlying textual data.<br>
+<br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/word-cloud.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="pie-chart" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">4.3.2</span> Pie Chart</h3>
+<p>This pie chart widget, similar to the word cloud widget, serves to visualize data, but in this case, it focuses on the distribution of languages within a given dataset or workset (volumes of novels).</p>
+<section id="internal-working-of-word-cloud-1" class="level4" data-number="4.3.2.1">
+<h4 data-number="4.3.2.1" class="anchored" data-anchor-id="internal-working-of-word-cloud-1"><span class="header-section-number">4.3.2.1</span> <strong>Internal working of Word Cloud:</strong></h4>
+<ul>
+<li><p><strong>Data Fetching</strong>: Data is fetched from an external API endpoint using the fetch API. In this case, the API endpoint is <a href="https://tools.htrc.illinois.edu/ef-api/worksets/$%7BworksetId%7D/metadata" class="uri">https://tools.htrc.illinois.edu/ef-api/worksets/$%7BworksetId%7D/metadata</a>. The fetched data contains information about the languages present in the dataset.</p></li>
+<li><p><strong>Data Processing</strong>: Upon receiving the data, it’s processed to count the occurrences of each language. The count of each language is stored in the languageCount state.</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> count <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      data<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="fu">forEach</span>(item <span class="kw">=&gt;</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> language <span class="op">=</span> item<span class="op">.</span><span class="at">metadata</span><span class="op">.</span><span class="at">language</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (language) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>          count[language] <span class="op">=</span> (count[language] <span class="op">||</span> <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Rendering the Pie Chart</strong>: The LanguagePieChart component is responsible for rendering the pie chart. It receives the language count data as props. Using D3.js, it generates the pie chart based on this data.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>MainCard</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>      content<span class="op">=</span>{<span class="kw">false</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      sx<span class="op">=</span>{{</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">padding</span><span class="op">:</span> theme<span class="op">.</span><span class="fu">spacing</span>(<span class="dv">8</span>)<span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">display</span><span class="op">:</span> <span class="st">'flex'</span><span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">flexDirection</span><span class="op">:</span> <span class="st">'column'</span><span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">alignItems</span><span class="op">:</span> <span class="st">'center'</span><span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">position</span><span class="op">:</span> <span class="st">'relative'</span><span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">height</span><span class="op">:</span> <span class="st">'650px'</span><span class="op">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">width</span><span class="op">:</span> <span class="st">'600px'</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      }}<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><strong>Drawing the Chart</strong>: Inside the drawChart function, D3.js is used to create the SVG elements necessary for the pie chart. Each language is represented as a slice in the pie chart, with its size proportional to its count in the dataset.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">drawChart</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Remove the old svg</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">select</span>(<span class="st">'#language-pie-container'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">select</span>(<span class="st">'svg'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Create new svg</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> d3</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">select</span>(<span class="st">'#language-pie-container'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">append</span>(<span class="st">'svg'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">'width'</span><span class="op">,</span> width)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">'height'</span><span class="op">,</span> height)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">append</span>(<span class="st">'g'</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">'transform'</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>width<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>height<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> arcGenerator <span class="op">=</span> d3</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">arc</span>()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">innerRadius</span>(innerRadius)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">outerRadius</span>(outerRadius)<span class="op">;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> pieGenerator <span class="op">=</span> d3</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="at">pie</span><span class="op">&lt;</span>{ <span class="dt">label</span><span class="op">:</span> string<span class="op">;</span> <span class="dt">value</span><span class="op">:</span> number }<span class="op">&gt;</span>() <span class="co">// Explicitly set the type here</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">padAngle</span>(<span class="dv">0</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">value</span>((d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Color Encoding</strong>: D3’s color scale is used to assign colors to each slice of the pie chart. The interpolateCool color scheme is used here.</p></li>
+<li><p><strong>Updating the Chart</strong>: The useEffect hook is utilized to update the chart whenever the language count data changes. This ensures that the chart reflects the latest data fetched from the API.</p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> formattedData <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">entries</span>(data)<span class="op">.</span><span class="fu">map</span>(([language<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({ <span class="dt">label</span><span class="op">:</span> language<span class="op">,</span> <span class="dt">value</span><span class="op">:</span> count }))<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arc <span class="op">=</span> svg</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(<span class="fu">pieGenerator</span>(formattedData))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">'path'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">'d'</span><span class="op">,</span> (d<span class="op">:</span> any) <span class="kw">=&gt;</span> <span class="fu">arcGenerator</span>(d) <span class="im">as</span> string) <span class="co">// Explicitly cast to string</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">'fill'</span><span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="fu">colorScale</span>(i))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">'stroke'</span><span class="op">,</span> <span class="st">'#ffffff'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">'stroke-width'</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Styling</strong>: The pie chart is styled to have a white stroke around each slice and white text labels, providing contrast against the colored slices.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> text <span class="op">=</span> svg</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(<span class="fu">pieGenerator</span>(formattedData))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">'text'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">'text-anchor'</span><span class="op">,</span> <span class="st">'middle'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">'alignment-baseline'</span><span class="op">,</span> <span class="st">'middle'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>((d<span class="op">:</span> any) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">label</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">'fill'</span><span class="op">,</span> <span class="st">'white'</span>) <span class="co">// Set text color to white</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.style('fill', (_, i) =&gt; colorScale(formattedData.length - i))</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">'transform'</span><span class="op">,</span> (d<span class="op">:</span> any) <span class="kw">=&gt;</span> {</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> [x<span class="op">,</span> y] <span class="op">=</span> arcGenerator<span class="op">.</span><span class="fu">centroid</span>(d)<span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="vs">`translate(</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">)`</span><span class="op">;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Summary:</strong> All in all, the pie chart widget provides a visual representation of the distribution of languages within a dataset, enabling users to quickly grasp the relative prevalence of different languages.<br>
+<br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pie.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/footer.png" class="img-fluid figure-img"></p>
@@ -224,6 +429,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

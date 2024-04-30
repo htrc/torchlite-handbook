@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./widget.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widgets and Notebooks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,6 +183,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#about-torchlite" id="toc-about-torchlite" class="nav-link active" data-scroll-target="#about-torchlite">About TORCHLITE</a></li>
+  <li><a href="#potential-use-cases" id="toc-potential-use-cases" class="nav-link" data-scroll-target="#potential-use-cases">Potential Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#searching-and-visualizing-specific-words-in-a-workset-widget" id="toc-searching-and-visualizing-specific-words-in-a-workset-widget" class="nav-link" data-scroll-target="#searching-and-visualizing-specific-words-in-a-workset-widget">Searching and visualizing specific words in a workset widget</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -215,6 +219,26 @@ ul.task-list li input[type="checkbox"] {
 <p>It is a next-generation Web-based, interactive visualization and analytical tool dashboard that consumes existing data from our one-of-a-kind, fully open Extracted Features (EF) dataset, along with a well-documented API to allow our user community to develop its own tools for interacting with data from the 17.5-million-volume HathiTrust Digital Library.</p>
 <p>Through this hackathon, we aim to develop and promote these tools and the API. The <a href="https://analytics.hathitrust.org/datasets">EF dataset</a> contains nearly 3 trillion tokens representing over 6 billion pages, making it arguably the largest open dataset of its kind readily available to digital humanities and other scholars in the world.</p>
 <p><strong>Please use <a href="https://perma.cc/" class="uri">https://perma.cc/</a> to cite the TORCHLITE dashboard/widgets/notebooks.</strong></p>
+</section>
+<section id="potential-use-cases" class="level1">
+<h1>Potential Use Cases</h1>
+<section id="searching-and-visualizing-specific-words-in-a-workset-widget" class="level2">
+<h2 class="anchored" data-anchor-id="searching-and-visualizing-specific-words-in-a-workset-widget">Searching and visualizing specific words in a workset widget</h2>
+<p><strong>Use case</strong>: Professor Reinhardt is interested in studying how terminology for human bodies, body systems, biology, and other living systems have been used to describe architecture and buildings. From close reading, we know that mentions and comparisons of architecture/buildings to human bodies, organs or other living systems can be noticed beginning in the earliest work in the Western tradition, Vitruvius’ De Architectura, in which he “puts forth a vision of architecture understood as an appreciation of the human body as its regulating system, based on the “optimal proportions of the human body”. It would be useful to be able to compare the usage of these words over time using a workset comprising volumes specifically about architecture and design.</p>
+<p><strong>Description</strong>: Like Bookworm, the visualization would graph the use of particular words over time, but would be restricted to a workset. Since a workset is much smaller than the overall HT corpus, the scale would be smaller than bookworm. Instead of words per million, it could be words per thousand or perhaps just a straight count of the words.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/uc.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>There is also an opportunity to provide other dynamic features that allow you to examine a particular work or alternative ways of displaying the data. For example, an alternative way to view the data could be a bar chart instead of a line graph. A bar chart would allow you to order the chart by time, and ascending, or descending.</p>
+<p><img src="images/uc1.png" class="img-fluid" data-fig-align="center"> <img src="images/uc2.png" class="img-fluid" data-fig-align="center"></p>
+<p>Another possible dynamic element could allow you to click on a bar and see a different view of an individual year. It would show the volumes from that year and how often that term appears in a specific volume. The hierarchical bar chart on Observable is an example of a bar chart that lets you drill down into a specific category: <a href="https://observablehq.com/@d3/hierarchical-bar-chart?intent=fork">Hierarchical bar chart/D3|Observable</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/uc3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/footer.png" class="img-fluid figure-img"></p>
@@ -222,6 +246,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

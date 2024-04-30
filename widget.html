@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TORCHLITE Hackathon Handbook - 4&nbsp; Creating Summary Widget and Notebook</title>
+<title>TORCHLITE Hackathon Handbook - 5&nbsp; Creating Summary Widget and Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./publications.html" rel="next">
+<link href="./citation.html" rel="next">
 <link href="./worksets.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./widget.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./widget.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -168,37 +168,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./htrc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About HathiTrust and HTRC</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About HathiTrust and HTRC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./technical-background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical Background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ef.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./worksets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./widget.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Citation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quick Links</span></span></a>
   </div>
 </li>
     </ul>
@@ -211,12 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">4.1</span> Overview</a></li>
-  <li><a href="#exploring-textual-data-with-the-torchlite-summary-widget" id="toc-exploring-textual-data-with-the-torchlite-summary-widget" class="nav-link" data-scroll-target="#exploring-textual-data-with-the-torchlite-summary-widget"><span class="header-section-number">4.2</span> Exploring Textual Data with the Torchlite Summary Widget</a></li>
-  <li><a href="#different-visualizations" id="toc-different-visualizations" class="nav-link" data-scroll-target="#different-visualizations"><span class="header-section-number">4.3</span> Different Visualizations</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">5.1</span> Overview</a></li>
+  <li><a href="#exploring-textual-data-with-the-torchlite-summary-widget" id="toc-exploring-textual-data-with-the-torchlite-summary-widget" class="nav-link" data-scroll-target="#exploring-textual-data-with-the-torchlite-summary-widget"><span class="header-section-number">5.2</span> Exploring Textual Data with the Torchlite Summary Widget</a></li>
+  <li><a href="#different-visualizations" id="toc-different-visualizations" class="nav-link" data-scroll-target="#different-visualizations"><span class="header-section-number">5.3</span> Different Visualizations</a>
   <ul class="collapse">
-  <li><a href="#word-cloud" id="toc-word-cloud" class="nav-link" data-scroll-target="#word-cloud"><span class="header-section-number">4.3.1</span> Word Cloud</a></li>
-  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">4.3.2</span> Pie Chart</a></li>
+  <li><a href="#word-cloud" id="toc-word-cloud" class="nav-link" data-scroll-target="#word-cloud"><span class="header-section-number">5.3.1</span> Word Cloud</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">5.3.2</span> Pie Chart</a></li>
+  <li><a href="#trends" id="toc-trends" class="nav-link" data-scroll-target="#trends"><span class="header-section-number">5.3.3</span> Trends</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/widget.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -226,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-5" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></h1>
+<h1 class="title"><span id="sec-6" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></h1>
 </div>
 
 
@@ -244,11 +257,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><em>The Summary offers a brief, textual summary of the current corpus, detailing its word count, unique word count, longest and shortest document, highest and lowest vocabulary densities, readability rate</em></p>
 </blockquote>
-<section id="overview" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">4.1</span> Overview</h2>
+<section id="overview" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">5.1</span> Overview</h2>
 </section>
-<section id="exploring-textual-data-with-the-torchlite-summary-widget" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="exploring-textual-data-with-the-torchlite-summary-widget"><span class="header-section-number">4.2</span> Exploring Textual Data with the Torchlite Summary Widget</h2>
+<section id="exploring-textual-data-with-the-torchlite-summary-widget" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="exploring-textual-data-with-the-torchlite-summary-widget"><span class="header-section-number">5.2</span> Exploring Textual Data with the Torchlite Summary Widget</h2>
 <p>In this Hackathon, we’re excited to introduce participants to the “Torchlite Summary” widget, a powerful tool designed to enhance your experience with textual data analysis.</p>
 <p>Developed using Python in a Jupyter Notebook environment and leveraging the HathiTrust Research Center (HTRC) APIs, this widget offers a streamlined approach to summarizing and exploring large datasets. Whether you’re analyzing literary works, historical documents, or any extensive text corpus, “Torchlite Summary” provides key insights through word frequencies, trends, and thematic overviews.</p>
 <p>We encourage all participants to utilize this tool to uncover hidden patterns, compare textual features, and drive their projects to new depths of analysis. A step-by-step guide within the notebook will help you get started, offering insights into API integration, data visualization, and customization options to tailor the tool to your specific research questions.</p>
@@ -257,15 +270,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://github.com/aarthishivkumar/HathiTrust-API/blob/main/htrcpractice1.ipynb">HathiTrust-API</a></p>
 </blockquote>
 </section>
-<section id="different-visualizations" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="different-visualizations"><span class="header-section-number">4.3</span> Different Visualizations</h2>
+<section id="different-visualizations" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="different-visualizations"><span class="header-section-number">5.3</span> Different Visualizations</h2>
 <p>In this section, we will summarize some of the sample visualizations in different programming languages that can be made using TORCHLITE API.</p>
-<section id="word-cloud" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="word-cloud"><span class="header-section-number">4.3.1</span> Word Cloud</h3>
+<section id="word-cloud" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="word-cloud"><span class="header-section-number">5.3.1</span> Word Cloud</h3>
 <p>A <strong>word cloud</strong> is a visualization technique for displaying text data in which the importance of each word is shown through its size. Typically, the more frequently a word appears in the text, the larger it appears in the word cloud. It’s useful for quickly identifying the most prominent terms in a dataset or text corpus.</p>
 <p>The Word Cloud widget is being displayed using React and D3 libraries. Here’s a high-level overview of how it works:</p>
-<section id="internal-working-of-word-cloud" class="level4" data-number="4.3.1.1">
-<h4 data-number="4.3.1.1" class="anchored" data-anchor-id="internal-working-of-word-cloud"><span class="header-section-number">4.3.1.1</span> Internal working of Word Cloud</h4>
+<section id="internal-working-of-word-cloud" class="level4" data-number="5.3.1.1">
+<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="internal-working-of-word-cloud"><span class="header-section-number">5.3.1.1</span> Internal working of Word Cloud</h4>
 <ul>
 <li><p><strong>Data Fetching</strong>: The component fetches data from an external API endpoint (https://tools.htrc.illinois.edu/ef-api/worksets/${worksetId}/volumes) using fetch API. This API returns volumes of text data along with their token counts.</p></li>
 <li><p><strong>Data Processing</strong>: Once the data is fetched, it is processed to extract the token counts for each word. Common words and punctuation marks are filtered out, and the frequency of each remaining word is calculated across all volumes.</p></li>
@@ -328,11 +341,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="pie-chart" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">4.3.2</span> Pie Chart</h3>
+<section id="pie-chart" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">5.3.2</span> Pie Chart</h3>
 <p>This pie chart widget, similar to the word cloud widget, serves to visualize data, but in this case, it focuses on the distribution of languages within a given dataset or workset (volumes of novels).</p>
-<section id="internal-working-of-word-cloud-1" class="level4" data-number="4.3.2.1">
-<h4 data-number="4.3.2.1" class="anchored" data-anchor-id="internal-working-of-word-cloud-1"><span class="header-section-number">4.3.2.1</span> Internal working of Word Cloud</h4>
+<section id="internal-working-of-word-cloud-1" class="level4" data-number="5.3.2.1">
+<h4 data-number="5.3.2.1" class="anchored" data-anchor-id="internal-working-of-word-cloud-1"><span class="header-section-number">5.3.2.1</span> Internal working of Word Cloud</h4>
 <ul>
 <li><p><strong>Data Fetching</strong>: Data is fetched from an external API endpoint using the fetch API. In this case, the API endpoint is <a href="https://tools.htrc.illinois.edu/ef-api/worksets/$%7BworksetId%7D/metadata" class="uri">https://tools.htrc.illinois.edu/ef-api/worksets/$%7BworksetId%7D/metadata</a>. The fetched data contains information about the languages present in the dataset.</p></li>
 <li><p><strong>Data Processing</strong>: Upon receiving the data, it’s processed to count the occurrences of each language. The count of each language is stored in the languageCount state.</p></li>
@@ -422,6 +435,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/pie.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</section>
+</section>
+<section id="trends" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="trends"><span class="header-section-number">5.3.3</span> Trends</h3>
+<p>You can make a <em>‘Volume Trends’</em> widget to analyze word frequency trends within a corpus of novels. Its functionality encompasses:</p>
+<p><strong>Data Acquisition and Processing</strong>: Upon component initialization, the widget interacts with an API endpoint to retrieve volume data from a specified workset, typically a collection of novels. The received data is then processed to extract pertinent information, notably the frequency of words across the volumes.</p>
+<p><strong>Interactive Search Capability</strong>: Users engage with the widget by inputting text either through typing or selecting from a dropdown menu. As characters are entered, the widget dynamically updates to reflect the frequency trends of words that match the entered criteria. This interactive search feature enhances user experience by facilitating rapid exploration of word frequency patterns.</p>
+<p><strong>Wildcard Functionality</strong>: An additional feature provided by the widget is the ability to utilize wildcard characters. Specifically, users can employ a wildcard, such as an asterisk, to denote a partial word search. For instance, typing <em>c</em> would trigger a display of word frequency trends for all words starting with the letter <em>c</em> across the volume of novels. This wildcard functionality expands the scope of exploratory analysis, enabling users to uncover broader trends and patterns within the corpus.</p>
+<p><strong>Chart Rendering with D3.js</strong>: The core of the widget’s visualization lies in its utilization of D3.js, a JavaScript library for creating dynamic, interactive data visualizations in web browsers. Through D3.js, the widget constructs a visually compelling representation of word frequency trends, employing elements such as scatter plots, bar charts, and connecting lines to convey insights effectively.</p>
+<p><strong>Dynamic Data Updates</strong>: As users interact with the widget, whether through typing, selecting from the dropdown, or employing wildcard characters, the displayed chart updates in real-time to reflect the evolving word frequency trends. This dynamic nature ensures that users receive immediate feedback on their inputs, fostering a responsive and engaging user experience.</p>
+<p><strong>Download Options</strong>: To facilitate further analysis or sharing of insights, the widget offers users the ability to download the chart as an image file (PNG or SVG) or export the underlying data as a CSV file. This functionality enhances the widget’s utility by enabling users to seamlessly integrate the generated visualizations and data into their workflows.</p>
+<p><strong>Additional Features</strong>: Beyond its core functionality, the widget includes supplementary features such as tooltips, providing users with contextual information when interacting with data points on the chart. These features enhance the overall usability and informativeness of the widget, contributing to a richer and more insightful user experience.</p>
+<p>Therefore, this widget can combine sophisticated data processing, interactive search capabilities, advanced visualization techniques, and user-friendly features to offer a powerful tool for exploring and analyzing word frequency trends within a corpus of novels. Its technical underpinnings, including D3.js integration and dynamic data updates, ensure robust functionality and usability for users engaged in text analysis and exploration.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/trends.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/footer.png" class="img-fluid figure-img"></p>
@@ -429,7 +460,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 </section>
 
@@ -670,12 +700,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./worksets.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./publications.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./citation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Citation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -686,7 +716,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This Handbook was built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">This Handbook was developed by <a href="https://manika-lamba.github.io/">Manika Lamba</a> in <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
 

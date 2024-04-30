@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TORCHLITE Hackathon Handbook - 2&nbsp; Extracted Features</title>
+<title>TORCHLITE Hackathon Handbook - 3&nbsp; Extracted Features</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ef.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Extracted Features</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ef.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -134,37 +134,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./htrc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About HathiTrust and HTRC</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About HathiTrust and HTRC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./technical-background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical Background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ef.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./worksets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./widget.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Citation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quick Links</span></span></a>
   </div>
 </li>
     </ul>
@@ -177,11 +189,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#htrc-extracted-features-dataset" id="toc-htrc-extracted-features-dataset" class="nav-link active" data-scroll-target="#htrc-extracted-features-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features Dataset</a></li>
-  <li><a href="#htrc-extracted-features-ef" id="toc-htrc-extracted-features-ef" class="nav-link" data-scroll-target="#htrc-extracted-features-ef"><span class="header-section-number">2.2</span> HTRC Extracted Features (EF)</a></li>
-  <li><a href="#per-volume-features" id="toc-per-volume-features" class="nav-link" data-scroll-target="#per-volume-features"><span class="header-section-number">2.3</span> Per-volume features</a></li>
-  <li><a href="#api-calls" id="toc-api-calls" class="nav-link" data-scroll-target="#api-calls"><span class="header-section-number">2.4</span> API CALLS</a></li>
-  <li><a href="#observable-notebooks" id="toc-observable-notebooks" class="nav-link" data-scroll-target="#observable-notebooks"><span class="header-section-number">2.5</span> OBSERVABLE Notebooks</a></li>
+  <li><a href="#htrc-extracted-features-dataset" id="toc-htrc-extracted-features-dataset" class="nav-link active" data-scroll-target="#htrc-extracted-features-dataset"><span class="header-section-number">3.1</span> HTRC Extracted Features Dataset</a></li>
+  <li><a href="#htrc-extracted-features-ef" id="toc-htrc-extracted-features-ef" class="nav-link" data-scroll-target="#htrc-extracted-features-ef"><span class="header-section-number">3.2</span> HTRC Extracted Features (EF)</a></li>
+  <li><a href="#per-volume-features" id="toc-per-volume-features" class="nav-link" data-scroll-target="#per-volume-features"><span class="header-section-number">3.3</span> Per-volume features</a></li>
+  <li><a href="#api-calls" id="toc-api-calls" class="nav-link" data-scroll-target="#api-calls"><span class="header-section-number">3.4</span> API CALLS</a></li>
+  <li><a href="#observable-notebooks" id="toc-observable-notebooks" class="nav-link" data-scroll-target="#observable-notebooks"><span class="header-section-number">3.5</span> OBSERVABLE Notebooks</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/ef.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -190,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-3" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></h1>
+<h1 class="title"><span id="sec-3" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></h1>
 </div>
 
 
@@ -205,8 +217,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="htrc-extracted-features-dataset" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="htrc-extracted-features-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features Dataset</h2>
+<section id="htrc-extracted-features-dataset" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="htrc-extracted-features-dataset"><span class="header-section-number">3.1</span> HTRC Extracted Features Dataset</h2>
 <ul>
 <li>Public domain, downloadable</li>
 <li>Structured data consisting of human-supplied (catalog) metadata and algorithmically-derived features</li>
@@ -214,8 +226,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Linked-data compliant (JSON-LD)</li>
 </ul>
 </section>
-<section id="htrc-extracted-features-ef" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="htrc-extracted-features-ef"><span class="header-section-number">2.2</span> HTRC Extracted Features (EF)</h2>
+<section id="htrc-extracted-features-ef" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="htrc-extracted-features-ef"><span class="header-section-number">3.2</span> HTRC Extracted Features (EF)</h2>
 <p>The features are:</p>
 <ul>
 <li>Volume- and page-level</li>
@@ -227,8 +239,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Some standard natural language &amp; statistical preprocessing is already done</li>
 </ul>
 </section>
-<section id="per-volume-features" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="per-volume-features"><span class="header-section-number">2.3</span> Per-volume features</h2>
+<section id="per-volume-features" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="per-volume-features"><span class="header-section-number">3.3</span> Per-volume features</h2>
 <p>Excerpted from catalog metadata, including:</p>
 <ul>
 <li>Title</li>
@@ -243,8 +255,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>HTRC Extracted Features API documentation is available <a href="https://htrc.stoplight.io/docs/ef-api/06db4dc572b49-ef">here</a></strong></p>
 </blockquote>
 </section>
-<section id="api-calls" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="api-calls"><span class="header-section-number">2.4</span> API CALLS</h2>
+<section id="api-calls" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="api-calls"><span class="header-section-number">3.4</span> API CALLS</h2>
 <ul>
 <li><p><strong>GET</strong> EF data for a volume by volume id</p>
 <ul>
@@ -284,8 +296,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="observable-notebooks" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="observable-notebooks"><span class="header-section-number">2.5</span> OBSERVABLE Notebooks</h2>
+<section id="observable-notebooks" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="observable-notebooks"><span class="header-section-number">3.5</span> OBSERVABLE Notebooks</h2>
 <p><a href="https://observablehq.com/@observablehq/documentation">OBSERVABLE Documentation</a></p>
 <p><a href="https://htrc.gitbook.io/torchlite/htrc-extracted-features">OBSERVABLE Documentation (Shorter)</a></p>
 <ul>
@@ -539,12 +551,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./technical-background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical Background</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./worksets.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -555,7 +567,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This Handbook was built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">This Handbook was developed by <a href="https://manika-lamba.github.io/">Manika Lamba</a> in <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
 

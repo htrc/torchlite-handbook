@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TORCHLITE Hackathon Handbook - 2&nbsp; Dashboard Technical Background</title>
+<title>TORCHLITE Hackathon Handbook - 5&nbsp; Dashboard Technical Background</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ef.html" rel="next">
-<link href="./htrc.html" rel="prev">
+<link href="./publications.html" rel="next">
+<link href="./widget.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./technical-background.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./technical-background.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,26 +139,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./technical-background.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./ef.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Extracted Features</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./worksets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Featured Worksets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./widget.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating Summary Widget and Notebook</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widgets and Notebooks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./technical-background.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,9 +183,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-mantis" id="toc-about-mantis" class="nav-link active" data-scroll-target="#about-mantis"><span class="header-section-number">2.1</span> About MANTIS</a></li>
-  <li><a href="#technology-stack" id="toc-technology-stack" class="nav-link" data-scroll-target="#technology-stack"><span class="header-section-number">2.2</span> Technology Stack</a></li>
-  <li><a href="#torchlight-next-js-backend-api" id="toc-torchlight-next-js-backend-api" class="nav-link" data-scroll-target="#torchlight-next-js-backend-api"><span class="header-section-number">2.3</span> Torchlight Next JS Backend API</a></li>
+  <li><a href="#about-mantis" id="toc-about-mantis" class="nav-link active" data-scroll-target="#about-mantis"><span class="header-section-number">5.1</span> About MANTIS</a></li>
+  <li><a href="#technology-stack" id="toc-technology-stack" class="nav-link" data-scroll-target="#technology-stack"><span class="header-section-number">5.2</span> Technology Stack</a></li>
+  <li><a href="#torchlight-next-js-backend-api" id="toc-torchlight-next-js-backend-api" class="nav-link" data-scroll-target="#torchlight-next-js-backend-api"><span class="header-section-number">5.3</span> Torchlight Next JS Backend API</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/technical-background.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></h1>
+<h1 class="title"><span id="sec-2" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dashboard Technical Background</span></span></h1>
 </div>
 
 
@@ -209,12 +209,12 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-mantis" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="about-mantis"><span class="header-section-number">2.1</span> About MANTIS</h2>
+<section id="about-mantis" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="about-mantis"><span class="header-section-number">5.1</span> About MANTIS</h2>
 <p>Mantis is a react admin template having aesthetics derived from ant design and components used from <a href="https://mui.com/">MUI</a>. Mantis is a developer-friendly &amp; highly customizable React Admin Template based on MUI. Mantis has plenty of ready-to-use M-UI components that will help you build your site faster and save your development time. We’ve followed the best industry standards to make our product easy, fast &amp; highly scalable to work with. It’s made with this high-end technology stack - React Hooks, Components, Create React App &amp; Redux.</p>
 </section>
-<section id="technology-stack" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="technology-stack"><span class="header-section-number">2.2</span> Technology Stack</h2>
+<section id="technology-stack" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="technology-stack"><span class="header-section-number">5.2</span> Technology Stack</h2>
 <ul>
 <li>Material UI v5 components library</li>
 <li>Authentication Methods - Auth0, Firebase, JWT, AWS</li>
@@ -229,8 +229,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Multi-Language</li>
 </ul>
 </section>
-<section id="torchlight-next-js-backend-api" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="torchlight-next-js-backend-api"><span class="header-section-number">2.3</span> Torchlight Next JS Backend API</h2>
+<section id="torchlight-next-js-backend-api" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="torchlight-next-js-backend-api"><span class="header-section-number">5.3</span> Torchlight Next JS Backend API</h2>
 <p>This document describes the models and API specification for the Torchlite NextJS backend, which supports the needs of the NextJS front-end interface. The Torchlite application is composed of the following components:</p>
 <ul>
 <li>the NextJS-based front-end interface (what the user sees in their browser)</li>
@@ -489,13 +489,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./htrc.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About HathiTrust and HTRC</span></span>
+      <a href="./widget.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Creating Summary Widgets and Notebooks</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ef.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Extracted Features</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./publications.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Relevant Publications</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

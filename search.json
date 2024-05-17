@@ -369,5 +369,12 @@
     "title": "2  Extracted Features",
     "section": "2.2 What are “Extracted Features”?",
     "text": "2.2 What are “Extracted Features”?\nExtracted features are computationally accessible data elements “extracted” (i.e., “derived”) from the HathiTrust Digital Library. They include:\n\nVolume- and page-level metadata\nTextual and statistical data and word-level metadata\nExtracted from the raw full text of volumes in the Digital Library\n\nEF positions researchers to access the data they need and begin their analysis of text with some standard natural language & statistical preprocessing already done for them."
+  },
+  {
+    "objectID": "ef.html#extracted-features-api",
+    "href": "ef.html#extracted-features-api",
+    "title": "2  Extracted Features",
+    "section": "2.4 Extracted Features API",
+    "text": "2.4 Extracted Features API\n\nThe Extracted Features API allows programmatic access to the Extracted Features Files and not only enables HTRC’s TORCHLITE dashboard, but also allows users to connect their own code notebooks, widgets, or applications.\nThe EF API Documentation fully documents the available API calls and allows users to request sample calls in a number of different coding languages.\n\n2.4.1 API CALLS\n\nGET EF data for a volume by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}\n\nCheck if a volume exists (HEAD)\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}\n\nGET volume metadata by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/metadata\n\nGET subset of pages of volume by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/pages\n\nCreate workset (POST)\n\nhttps://data.htrc.illinois.edu/ef-api/worksets\n\nDELETE workset by workset id\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}\n\nGET workset\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}\n\nGET workset volumes by workset id\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/volumes\n\nGET workset volumes metadata by workset id o\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/metadata"
   }
 ]

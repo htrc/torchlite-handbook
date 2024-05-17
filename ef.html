@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#htrc-extracted-features-ef-dataset" id="toc-htrc-extracted-features-ef-dataset" class="nav-link active" data-scroll-target="#htrc-extracted-features-ef-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features (EF) Dataset</a></li>
   <li><a href="#what-are-extracted-features" id="toc-what-are-extracted-features" class="nav-link" data-scroll-target="#what-are-extracted-features"><span class="header-section-number">2.2</span> What are “Extracted Features”?</a></li>
   <li><a href="#per-volume-features" id="toc-per-volume-features" class="nav-link" data-scroll-target="#per-volume-features"><span class="header-section-number">2.3</span> Per-volume features</a></li>
-  <li><a href="#torchlite-api" id="toc-torchlite-api" class="nav-link" data-scroll-target="#torchlite-api"><span class="header-section-number">2.4</span> TORCHLITE API</a>
+  <li><a href="#extracted-features-api" id="toc-extracted-features-api" class="nav-link" data-scroll-target="#extracted-features-api"><span class="header-section-number">2.4</span> Extracted Features API</a>
   <ul class="collapse">
   <li><a href="#api-calls" id="toc-api-calls" class="nav-link" data-scroll-target="#api-calls"><span class="header-section-number">2.4.1</span> API CALLS</a></li>
   </ul></li>
@@ -250,9 +250,11 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/ef.png" class="img-fluid"> JSON pretty print view of an EF file</p>
 <p>Newly available as part of the TORCHLITE framework (but not yet included in older EF versions): - Token counts aggregated by volume.</p>
 </section>
-<section id="torchlite-api" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="torchlite-api"><span class="header-section-number">2.4</span> TORCHLITE API</h2>
-<p>HTRC Extracted Features API <a href="https://htrc.stoplight.io/docs/ef-api/06db4dc572b49-ef">documentation</a></p>
+<section id="extracted-features-api" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="extracted-features-api"><span class="header-section-number">2.4</span> Extracted Features API</h2>
+<p><img src="images/torchlite_diagram.jpg" class="img-fluid"></p>
+<p>The Extracted Features API allows programmatic access to the Extracted Features Files and not only enables HTRC’s TORCHLITE dashboard, but also allows users to connect their own code notebooks, widgets, or applications.</p>
+<p>The <a href="https://htrc.stoplight.io/docs/ef-api/06db4dc572b49-ef">EF API Documentation</a> fully documents the available API calls and allows users to request sample calls in a number of different coding languages.</p>
 <section id="api-calls" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="api-calls"><span class="header-section-number">2.4.1</span> API CALLS</h3>
 <ul>

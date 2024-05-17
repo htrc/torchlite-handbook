@@ -183,10 +183,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#htrc-extracted-features-dataset" id="toc-htrc-extracted-features-dataset" class="nav-link active" data-scroll-target="#htrc-extracted-features-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features Dataset</a></li>
-  <li><a href="#htrc-extracted-features-ef" id="toc-htrc-extracted-features-ef" class="nav-link" data-scroll-target="#htrc-extracted-features-ef"><span class="header-section-number">2.2</span> HTRC Extracted Features (EF)</a></li>
+  <li><a href="#htrc-extracted-features-ef-dataset" id="toc-htrc-extracted-features-ef-dataset" class="nav-link active" data-scroll-target="#htrc-extracted-features-ef-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features (EF) Dataset</a></li>
+  <li><a href="#what-are-extracted-features" id="toc-what-are-extracted-features" class="nav-link" data-scroll-target="#what-are-extracted-features"><span class="header-section-number">2.2</span> What are “Extracted Features”?</a></li>
   <li><a href="#per-volume-features" id="toc-per-volume-features" class="nav-link" data-scroll-target="#per-volume-features"><span class="header-section-number">2.3</span> Per-volume features</a></li>
-  <li><a href="#api-calls" id="toc-api-calls" class="nav-link" data-scroll-target="#api-calls"><span class="header-section-number">2.4</span> API CALLS</a></li>
+  <li><a href="#torchlite-api" id="toc-torchlite-api" class="nav-link" data-scroll-target="#torchlite-api"><span class="header-section-number">2.4</span> TORCHLITE API</a>
+  <ul class="collapse">
+  <li><a href="#api-calls" id="toc-api-calls" class="nav-link" data-scroll-target="#api-calls"><span class="header-section-number">2.4.1</span> API CALLS</a></li>
+  </ul></li>
   <li><a href="#observable-notebooks" id="toc-observable-notebooks" class="nav-link" data-scroll-target="#observable-notebooks"><span class="header-section-number">2.5</span> OBSERVABLE Notebooks</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/htrc/torchlite-handbook/edit/main/ef.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/htrc/torchlite-handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -211,27 +214,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="htrc-extracted-features-dataset" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="htrc-extracted-features-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features Dataset</h2>
+<section id="htrc-extracted-features-ef-dataset" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="htrc-extracted-features-ef-dataset"><span class="header-section-number">2.1</span> HTRC Extracted Features (EF) Dataset</h2>
 <ul>
-<li>Public domain, downloadable</li>
-<li>Structured data consisting of human-supplied (catalog) metadata and algorithmically-derived features</li>
-<li>From 17.1 million volumes (i.e., not quite in sync with HTDL)</li>
+<li>Open access under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, and freely <a href="https://analytics.hathitrust.org/datasets">downloadable</a></li>
+<li>Structured data consisting of human-created (catalog) metadata and algorithmically-derived features</li>
+<li>Representing 17.1 million volumes, including those still under copyright (i.e., not quite in sync with the HathiTrust Digital Library )</li>
 <li>Linked-data compliant (JSON-LD)</li>
+<li>Complete documentation available at <a href="https://go.illinois.edu/EF20_documentation">https://go.illinois.edu/EF20_documentation</a></li>
 </ul>
 </section>
-<section id="htrc-extracted-features-ef" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="htrc-extracted-features-ef"><span class="header-section-number">2.2</span> HTRC Extracted Features (EF)</h2>
-<p>The features are:</p>
+<section id="what-are-extracted-features" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="what-are-extracted-features"><span class="header-section-number">2.2</span> What are “Extracted Features”?</h2>
+<p>Extracted features are computationally accessible data elements “extracted” (i.e., “derived”) from the HathiTrust Digital Library. They include:</p>
 <ul>
-<li>Volume- and page-level</li>
-<li>Selected data and metadata</li>
-<li>Extracted from raw text</li>
+<li>Volume- and page-level metadata</li>
+<li>Textual and statistical data and word-level metadata</li>
+<li>Extracted from the raw full text of volumes in the Digital Library</li>
 </ul>
-<p>Position the researcher to begin analysis</p>
-<ul>
-<li>Some standard natural language &amp; statistical preprocessing is already done</li>
-</ul>
+<p>EF positions researchers to access the data they need and begin their analysis of text with some standard natural language &amp; statistical preprocessing already done for them.</p>
 </section>
 <section id="per-volume-features" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="per-volume-features"><span class="header-section-number">2.3</span> Per-volume features</h2>
@@ -240,55 +241,59 @@ ul.task-list li input[type="checkbox"] {
 <li>Title</li>
 <li>Author</li>
 <li>Language</li>
-<li>Publication data</li>
+<li>Publication information</li>
 <li>Identifiers</li>
-<li>[Subjects]</li>
+<li>[in future releases: Subjects]</li>
 </ul>
-<p><img src="images/ef.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p><strong>HTRC Extracted Features API documentation is available <a href="https://htrc.stoplight.io/docs/ef-api/06db4dc572b49-ef">here</a></strong></p>
-</blockquote>
+<p><img src="images/ef_file.png" class="img-fluid"></p>
+<p>Diagram of an EF file.</p>
+<p><img src="images/ef.png" class="img-fluid"> JSON pretty print view of an EF file</p>
+<p>Newly available as part of the TORCHLITE framework (but not yet included in older EF versions): - Token counts aggregated by volume.</p>
 </section>
-<section id="api-calls" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="api-calls"><span class="header-section-number">2.4</span> API CALLS</h2>
+<section id="torchlite-api" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="torchlite-api"><span class="header-section-number">2.4</span> TORCHLITE API</h2>
+<p>HTRC Extracted Features API <a href="https://htrc.stoplight.io/docs/ef-api/06db4dc572b49-ef">documentation</a></p>
+<section id="api-calls" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="api-calls"><span class="header-section-number">2.4.1</span> API CALLS</h3>
 <ul>
 <li><p><strong>GET</strong> EF data for a volume by volume id</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/volumes/{clean-htid}</li>
+<li>https://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}</li>
 </ul></li>
 <li><p>Check if a volume exists (<strong>HEAD</strong>)</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/volumes/{clean-htid}</li>
+<li>https://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}</li>
 </ul></li>
 <li><p><strong>GET</strong> volume metadata by volume id</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/volumes/{clean-htid}/metadata</li>
+<li>https://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/metadata</li>
 </ul></li>
 <li><p><strong>GET</strong> subset of pages of volume by volume id</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/volumes/{clean-htid}/pages</li>
+<li>https://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/pages</li>
 </ul></li>
 <li><p>Create workset (<strong>POST</strong>)</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/worksets</li>
+<li>https://data.htrc.illinois.edu/ef-api/worksets</li>
 </ul></li>
 <li><p><strong>DELETE</strong> workset by workset id</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/worksets/{workset-id}</li>
+<li>https://data.htrc.illinois.edu/ef-api/worksets/{workset-id}</li>
 </ul></li>
 <li><p><strong>GET</strong> workset</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/worksets/{workset-id}</li>
+<li>https://data.htrc.illinois.edu/ef-api/worksets/{workset-id}</li>
 </ul></li>
 <li><p><strong>GET</strong> workset volumes by workset id</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/worksets/{workset-id}/volumes</li>
+<li>https://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/volumes</li>
 </ul></li>
 <li><p><strong>GET</strong> workset volumes metadata by workset id o</p>
 <ul>
-<li>https://tools.htrc.illinois.edu/ef-api/worksets/{workset-id}/metadata</li>
+<li>https://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/metadata</li>
 </ul></li>
 </ul>
+</section>
 </section>
 <section id="observable-notebooks" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="observable-notebooks"><span class="header-section-number">2.5</span> OBSERVABLE Notebooks</h2>

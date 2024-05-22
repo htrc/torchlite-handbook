@@ -303,7 +303,7 @@
   {
     "objectID": "links.html",
     "href": "links.html",
-    "title": "7  Quick Links",
+    "title": "8  Quick Links",
     "section": "",
     "text": "Hackathon Website: https://htrc.github.io/torchlite-hackathon/\nExtracted Features API: https://htrc.stoplight.io/docs/ef-api/\nExtracted Features documentation: https://go.illinois.edu/EF20_documentation/\nTORCHLITE API: https://torchlite-dev-api.htrc.illinois.edu/docs#//\nSummary Widget: https://github.com/htrc/torchlite-summary\nTrends Standalone HTML Page: https://github.com/htrc/torchlite-trends"
   },
@@ -319,7 +319,7 @@
     "href": "widget.html#exploring-textual-data-with-notebooks",
     "title": "4  Creating Summary Widgets and Notebooks",
     "section": "4.3 Exploring Textual Data with Notebooks",
-    "text": "4.3 Exploring Textual Data with Notebooks\n\nWordshift Graph: https://colab.research.google.com/drive/14O7zxt8J7rVMvDrTqJpxWD7cnkxXNzw1?usp=sharing\nExploring API: https://observablehq.com/@jswatsch/torchlite-ef-api\nWord Cloud: https://observablehq.com/@jswatsch/torchlite-workset-word-cloud\nContributor Map: https://observablehq.com/d/e69a3c5185393caa"
+    "text": "4.3 Exploring Textual Data with Notebooks\n\nWordshift Graph: https://colab.research.google.com/drive/14O7zxt8J7rVMvDrTqJpxWD7cnkxXNzw1?usp=sharing\nExploring API: https://observablehq.com/@jswatsch/torchlite-ef-api\nWord Cloud: https://observablehq.com/@jswatsch/torchlite-workset-word-cloud\nContributor Map: https://observablehq.com/d/e69a3c5185393caa\nExploring EF API: https://github.com/aarthishivkumar/HathiTrust-API/blob/main/htrcpractice1.ipynb\nSummary Widget: https://github.com/htrc/torchlite-summary\nTrends Standalone HTML Page: https://github.com/htrc/torchlite-trends"
   },
   {
     "objectID": "widget.html#volumes",
@@ -350,6 +350,7 @@
     "text": "Searching and visualizing specific words in a workset widget\nUse case: Professor Reinhardt is interested in studying how terminology for human bodies, body systems, biology, and other living systems have been used to describe architecture and buildings. From close reading, we know that mentions and comparisons of architecture/buildings to human bodies, organs or other living systems can be noticed beginning in the earliest work in the Western tradition, Vitruvius’ De Architectura, in which he “puts forth a vision of architecture understood as an appreciation of the human body as its regulating system, based on the “optimal proportions of the human body”. It would be useful to be able to compare the usage of these words over time using a workset comprising volumes specifically about architecture and design.\nDescription: Like Bookworm, the visualization would graph the use of particular words over time, but would be restricted to a workset. Since a workset is much smaller than the overall HT corpus, the scale would be smaller than bookworm. Instead of words per million, it could be words per thousand or perhaps just a straight count of the words.\n\n\n\n\n\nThere is also an opportunity to provide other dynamic features that allow you to examine a particular work or alternative ways of displaying the data. For example, an alternative way to view the data could be a bar chart instead of a line graph. A bar chart would allow you to order the chart by time, and ascending, or descending.\n \nAnother possible dynamic element could allow you to click on a bar and see a different view of an individual year. It would show the volumes from that year and how often that term appears in a specific volume. The hierarchical bar chart on Observable is an example of a bar chart that lets you drill down into a specific category: Hierarchical bar chart/D3|Observable"
   },
   {
+<<<<<<< Updated upstream
     "objectID": "ef.html#torchlite-api",
     "href": "ef.html#torchlite-api",
     "title": "2  Extracted Features",
@@ -376,5 +377,12 @@
     "title": "2  Extracted Features",
     "section": "2.4 Extracted Features API",
     "text": "2.4 Extracted Features API\n\nThe Extracted Features API allows programmatic access to the Extracted Features Files and not only enables HTRC’s TORCHLITE dashboard, but also allows users to connect their own code notebooks, widgets, or applications.\nThe EF API Documentation fully documents the available API calls and allows users to request sample calls in a number of different coding languages.\n\n2.4.1 API CALLS\n\nGET EF data for a volume by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}\n\nCheck if a volume exists (HEAD)\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}\n\nGET volume metadata by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/metadata\n\nGET subset of pages of volume by volume id\n\nhttps://data.htrc.illinois.edu/ef-api/volumes/{clean-htid}/pages\n\nCreate workset (POST)\n\nhttps://data.htrc.illinois.edu/ef-api/worksets\n\nDELETE workset by workset id\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}\n\nGET workset\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}\n\nGET workset volumes by workset id\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/volumes\n\nGET workset volumes(aggregated) by workset id\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/volumes/aggregated\n\nGET workset volumes metadata by workset id o\n\nhttps://data.htrc.illinois.edu/ef-api/worksets/{workset-id}/metadata"
+=======
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "7  Team",
+    "section": "",
+    "text": "John Walsh (HTRC Director, Indiana University)\nJ. Stephen Downie (HTRC Co-Director, University of Illinois)\nJanet Swatscheno (HTRC Associate Director for Outreach and Education Services, HathiTrust)\nGlen Layne-Worthey (HTRC Associate Director for Research Support Services, University of Illinois)\nJennifer Christie (Associate UX Specialist, HTRC)\nBoris Capitanu (Senior Research Developer)\nRyan Dubnicek (Digital Humanities Specialist, HTRC)\nDeren Kudeki (Visiting Research Programmer, HTRC)\nManika Lamba (Postdoctoral Research Associate, University of Illinois)\nSriram Reddy Pidaparthi (Indiana University)\nPooja Tippur Shashidhar (Indiana University)"
+>>>>>>> Stashed changes
   }
 ]
